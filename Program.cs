@@ -1,28 +1,31 @@
-﻿namespace TPCommercial
+﻿using System.Security.Cryptography;
+using TP3Commercial;
+
+class program
 {
-
-    class Commercial
+    static void Main(string[] args)
     {
-        private string nom;
-        private string prenom;
-        private int anneeNaissance;
+        Categories ca1 = new Categories
+            ("1", "Salarié");
 
-        public string Nom { get => nom; set => nom = value; }
-        public string Prenom { get => prenom; set => prenom = value; }
-        public int AnneeNaissance { get => anneeNaissance; set => anneeNaissance = value; }
+        Categories ca2 = new Categories
+            ("2", "Indépendant");
 
-        public Commercial(string Nom, string Prenom, int AnneeNaissance)
-        {
-            this.nom = Nom;
-            this.prenom = Prenom;
-            this.anneeNaissance = AnneeNaissance;
-        }
+        Commercial c1 = new Commercial 
+            ("LaMenace", "Yass",2005, ca1 );
 
-        public double CalculAge()
-        {
-            return 2024 - this.anneeNaissance;
-        }
+        Commercial c2 = new Commercial
+            ("LaMenace", "Akira", 1994, ca2 );
+
+        Commercial c3 = new Commercial
+            ("Patrick", "LeMaire", 1957, ca2 );
+
+        Console.WriteLine (c1);
+        Console.WriteLine (c2);
+        Console.WriteLine (c3);
+        c1.compare(c2);
+
     }
 
-
-}   
+    
+}
