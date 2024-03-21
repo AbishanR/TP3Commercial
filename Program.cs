@@ -20,9 +20,7 @@ class program
         Commercial c3 = new Commercial
             ("Patrick", "LeMaire", 1957, ca2 );
 
-        Console.WriteLine (c1);
-        Console.WriteLine (c2);
-        Console.WriteLine (c3);
+        Console.WriteLine ("voici les infos du commercial : " + c1 + c2 + c3);
         c1.compare(c2);
 
     }
